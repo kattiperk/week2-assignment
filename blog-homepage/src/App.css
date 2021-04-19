@@ -42,7 +42,10 @@
 }
 
 ul,
-li {
+li,
+p,
+h4,
+h5 {
   padding: 0;
   margin: 0;
 }
@@ -51,22 +54,84 @@ li {
   list-style-type: none;
 }
 
+img {
+  width: 100%;
+}
+
+a {
+  display: block;
+}
+
 .main-wrapper {
   position: relative;
   margin: 20px;
 }
-  .articles-holder {
+  .for-you,
+  .in-case-you-missed {
+    margin-bottom: 50px;
+  }
+  .aticles-holder {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
     .card-wrap {
       position: relative;
+      display: flex;
+      margin: 10px 0;
       text-align: left;
       border: 1px solid #eee;
       border-radius: 2px;
     }
     .for-you .card-wrap {
-      width: 50%;
+      width: calc(50% - 10px);
     }
     .in-case-you-missed .card-wrap {
       width: 33%;
     }
+      .card-wrap-inner {
+        display: flex;
+        flex: 1 1 auto;
+      }
+      .card-image-holder {
+        width: 50%;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+        .card-image-holder > a {
+          width: 100%;
+          height: 100%;
+        }
+      .card-content-holder {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        height: 100%;
+        padding: 20px 20px;
+      }
+        .card-content-data-holder {
+          display: flex;
+        }
+          .card-content-data-inner {
+            display: flex;
+          }
+          .card-content-text-holder {
+            margin-bottom: 50px;
+          }
+            .card-content-text-holder h4 {
+              margin-bottom: 1rem;
+            }
+              .card-content-text-holder h4 a {
+                color: initial;
+                text-decoration: none;
+              }
+          .card-author-image {
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+          }
+          
