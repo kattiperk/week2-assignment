@@ -15,21 +15,29 @@ class ArticleAuthor extends Component {
                 memberPreview: PropTypes.bool
             })
     }
-    
+
     render() {
-        console.log(this.props)
+        const displayDate = () => {
+            const months = [
+                'January','February','March','April','May','June','July','August','September','October','November','December'
+            ];
+            const month = new Date(this.props.article.postedDate).getMonth();
+            const date = new Date(this.props.article.postedDate).getDate();
+            return `${months[month]} ${date}`;
+        }
+
         return (
             <div>
-                <img src={this.props.author.image} class="card-author-image"/>
-                                <div class="card-author">
-                                    <h5>{this.props.author.name}</h5>
-                                        <p>
-                                            {this.props.article.postedDate}
-                                        </p>
-                                        <p>
-                                            {this.props.article.minutesToRead} min read
-                                        </p>
-                                </div>
+                <img src={this.props.author.image} className="card-author-image"/>
+                <div className="card-author">
+                    <h5>{this.props.author.name}</h5>
+                        <span>
+                        {displayDate()}&nbsp;&#183;&nbsp;
+                        </span>
+                        <span>
+                            {this.props.article.minutesToRead} min read
+                        </span>
+                </div>
             </div>
         )
     }

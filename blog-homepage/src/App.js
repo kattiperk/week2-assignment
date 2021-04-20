@@ -18,8 +18,8 @@ function App() {
       <div className="in-case-you-missed">
         <h2>In case you missed it</h2>
         <div className="aticles-holder">
-          {missedArticles.map((article, idx) => {
-            return <Article article={article} key='idx' />
+          {missedArticles.map((article, id) => {
+            return <Article article={article} key='id' />
           })}
         </div>
       </div>

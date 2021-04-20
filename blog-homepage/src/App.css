@@ -116,6 +116,8 @@ a {
         }
           .card-content-data-inner {
             display: flex;
+            width: 100%;
+            justify-content: space-between;
           }
           .card-content-text-holder {
             margin-bottom: 50px;
