@@ -129,6 +129,30 @@ a {
                 color: initial;
                 text-decoration: none;
               }
+        .card-content-member:before {
+          content: '';
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          background: url(svg/star.svg) no-repeat;
+        }
+        .card-content-audio:before {
+          content: '';
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          background: url(svg/volume.svg) no-repeat;
+        }
+        .is-invisible {
+          display: none;
+          visibility: hidden;
+          left: -9999px;
+        }
+        .is-visible {
+          display: block;
+          visibility: visible;
+          left: auto;
+        }
           .card-author-image {
             display: block;
             width: 50px;
