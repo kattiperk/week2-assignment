@@ -21,7 +21,7 @@ class ArticleFeatures extends Component {
         }
 
         return (
-            <div class={`card-content-features ${visibility()}`}>
+            <div className={`card-content-features ${visibility()}`}>
                 <div
                     className={`card-content-features-inner card-content-audio ${audioVisibility}`}
                 >
