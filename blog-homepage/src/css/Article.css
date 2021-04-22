@@ -1,0 +1,82 @@
+.main-wrapper {
+    position: relative;
+    margin: 20px;
+  }
+    .for-you,
+    .in-case-you-missed {
+        margin-bottom: 50px;
+    }
+        .aticles-holder {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+            .card-wrap {
+                position: relative;
+                display: flex;
+                margin: 10px;
+                text-align: left;
+                border: 1px solid #eee;
+                border-radius: 2px;
+            }
+            .for-you .card-wrap {
+                width: calc(50% - 20px);
+            }
+            .in-case-you-missed .card-wrap {
+                width: calc(33.333333333333333% - 20px);
+            }
+                .card-wrap-inner {
+                    display: flex;
+                    flex: 1 1 auto;
+                }
+                .in-case-you-missed .card-wrap-inner {
+                    flex-direction: column;
+                }
+                    .card-image-holder {
+                        width: 50%;
+                        background-position: 50% 50%;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                    .in-case-you-missed .card-image-holder {
+                        width: 100%;
+                        height: 150px;
+                    }
+                        .card-image-holder > a {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    .card-content-holder {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 50%;
+                        height: 100%;
+                        padding: 20px 20px;
+                    }
+                    .in-case-you-missed .card-content-holder {
+                        width: 100%;
+                    }
+                        .card-content-text-holder {
+                            width: 100%;
+                            margin-bottom: 50px;
+                        }
+                        .in-case-you-missed .card-content-text-holder {
+                            margin-bottom: 30px;
+                        }
+                            .card-content-text-holder h4 {
+                                margin-bottom: 1rem;
+                            }
+                        .card-content-data-holder {
+                            width: 100%;
+                            align-self: flex-end;
+                        }
+                            .bookmark {
+                                display: inline-block;
+                                width: 15px;
+                                height: 15px;
+                                background: url('../svg/bookmark.svg') no-repeat;
+                                cursor: pointer;
+                            }
+                            .bookmark.added {
+                                background-color: #39cc59;
+                            }

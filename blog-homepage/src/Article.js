@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import ArticleAuthor from './ArticleAuthor.js'
+import ArticleAuthor from './ArticleAuthor.js';
+import ArticleFeatures from './ArticleFeatures.js';
 import PropTypes from 'prop-types';
 import bookmark from './svg/bookmark.svg';
-import star from './svg/star.svg';
-import audio from './svg/volume.svg';
 
 class Article extends Component {
     static propTypes = {
@@ -11,16 +10,21 @@ class Article extends Component {
             title: PropTypes.string,
             description: PropTypes.string,
             image: PropTypes.string,
-            link: PropTypes.string,
-            postedDate: PropTypes.string,
-            minutesToRead: PropTypes.number,
-            hasAudioAvailable: PropTypes.bool,
-            memberPreview: PropTypes.bool
+            link: PropTypes.string
         })
     }
+
+    state = { inBookmarks: false }
+
+    toggleBookmark = () => {
+        this.setState({
+            inBookmarks: !this.state.inBookmarks
+        })
+    }
+      
     
     render() {
-
+        const bookmarkExist = this.state.inBookmarks ? 'added' : 'removed';
 
         return (
             <div className="card-wrap">
@@ -29,27 +33,17 @@ class Article extends Component {
                         <a href={this.props.article.link}></a>
                     </div>
                     <div className="card-content-holder">
-                            <div
-                                className={this.props.article.hasAudioAvailable ? 'card-content-audio is-visible' : 'card-content-audio is-invisible'}
-                            >
-                                Audio availbale
-                            </div>
-                            <div 
-                                className={this.props.article.memberPreview ? 'card-content-member is-visible' : 'card-content-member is-invisible'}
-                            >
-                                Member preview
-                            </div>
+                        <ArticleFeatures article={this.props.article} />
                         <div className="card-content-text-holder">
                             <h4><a href={this.props.article.link}>{this.props.article.title}</a></h4>
-                            <p>{this.props.article.description}</p>
+                            <p><a href={this.props.article.link}>{this.props.article.description}</a></p>
                         </div>
                         <div className="card-content-data-holder">
                             <div className="card-content-data-inner">
                                 <ArticleAuthor author={this.props.article.author} article={this.props.article} />
                                 <div className="card-content-button">
-                                    <a href="#">
-                                        <img src={bookmark} alt="bookmark" />
-                                    </a>
+                                    <span onClick={this.toggleBookmark} className={`bookmark ${bookmarkExist}`}>
+                                    </span>
                                 </div>
                             </div>
                         </div>

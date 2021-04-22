@@ -10,9 +10,7 @@ class ArticleAuthor extends Component {
             }),
             article: PropTypes.shape({
                 postedDate: PropTypes.string,
-                minutesToRead: PropTypes.number,
-                hasAudioAvailable: PropTypes.bool,
-                memberPreview: PropTypes.bool
+                minutesToRead: PropTypes.number
             })
     }
 
@@ -26,13 +24,17 @@ class ArticleAuthor extends Component {
             return `${months[month]} ${date}`;
         }
 
+        const authorMemberMedium = this.props.author.isMediumMember ? 'card-author-member-true' : '';
+
         return (
-            <div>
-                <img src={this.props.author.image} className="card-author-image"/>
+            <div className="card-author-holder">
+                <div className={`card-author-member ${authorMemberMedium}`}>
+                    <img src={this.props.author.image} className="card-author-image" />
+                </div>
                 <div className="card-author">
                     <h5>{this.props.author.name}</h5>
                         <span>
-                        {displayDate()}&nbsp;&#183;&nbsp;
+                            {displayDate()}&nbsp;&#183;&nbsp;
                         </span>
                         <span>
                             {this.props.article.minutesToRead} min read

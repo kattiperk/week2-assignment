@@ -1,8 +1,10 @@
 import './App.css';
-// import Article from './Article';
-import yourArticles from './your-articles.json';
-import missedArticles from './missed-articles.json';
+import './css/Article.css';
+import './css/ArticleAuthor.css';
+import './css/ArticleFeatures.css';
 import Article from './Article';
+import yourArticles from './_data/your-articles.json';
+import missedArticles from './_data/missed-articles.json';
 
 function App() {
   return (
