@@ -29,7 +29,7 @@ class ArticleAuthor extends Component {
         return (
             <div className="card-author-holder">
                 <div className={`card-author-member ${authorMemberMedium}`}>
-                    <img src={this.props.author.image} className="card-author-image" />
+                    <img src={this.props.author.image} alt={`Author ${this.props.author.name}`} className="card-author-image" />
                 </div>
                 <div className="card-author">
                     <h5>{this.props.author.name}</h5>

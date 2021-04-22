@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ArticleAuthor from './ArticleAuthor.js';
 import ArticleFeatures from './ArticleFeatures.js';
 import PropTypes from 'prop-types';
-import bookmark from './svg/bookmark.svg';
 
 class Article extends Component {
     static propTypes = {
@@ -30,13 +29,13 @@ class Article extends Component {
             <div className="card-wrap">
                 <div className="card-wrap-inner">
                     <div className="card-image-holder" style={{backgroundImage: `url(${this.props.article.image})`}}>
-                        <a href={this.props.article.link}></a>
+                        <a href={this.props.article.link} title={this.props.article.title} target="_blank" rel="noreferrer"></a>
                     </div>
                     <div className="card-content-holder">
                         <ArticleFeatures article={this.props.article} />
                         <div className="card-content-text-holder">
-                            <h4><a href={this.props.article.link}>{this.props.article.title}</a></h4>
-                            <p><a href={this.props.article.link}>{this.props.article.description}</a></p>
+                            <h4><a href={this.props.article.link} target="_blank" rel="noreferrer">{this.props.article.title}</a></h4>
+                            <p><a href={this.props.article.link} target="_blank" rel="noreferrer">{this.props.article.description}</a></p>
                         </div>
                         <div className="card-content-data-holder">
                             <div className="card-content-data-inner">
