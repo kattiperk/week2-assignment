@@ -29,7 +29,16 @@ class Article extends Component {
             <div className="card-wrap">
                 <div className="card-wrap-inner">
                     <div className="card-image-holder" style={{backgroundImage: `url(${this.props.article.image})`}}>
-                        <a href={this.props.article.link} title={this.props.article.title} target="_blank" rel="noreferrer"></a>
+                        <a
+                            href={this.props.article.link}
+                            title={this.props.article.title}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={this.props.article.title}
+                            aria-hidden="true"
+                        >
+                            <span>{this.props.article.title}</span>
+                        </a>
                     </div>
                     <div className="card-content-holder">
                         <ArticleFeatures article={this.props.article} />

@@ -79,6 +79,13 @@ a {
   text-decoration: none;
   color: inherit;
 }
+  a span {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    top: -10px;
+  }
 
 .is-invisible {
   display: none !important;
